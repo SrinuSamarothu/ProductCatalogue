@@ -20,7 +20,7 @@ namespace DataService
 
         public Product? UpdateProduct(Product product);
 
-        public void DeleteProduct(Product product);
+        public Product DeleteProduct(Product product);
 
         public IEnumerable<ProductAttribute> getAttributes(string productId);
 
@@ -28,6 +28,6 @@ namespace DataService
 
         public ProductAttribute? UpdateAttribute(ProductAttribute productAttribute);
 
-        public void DeleteAttribute(ProductAttribute productAttribute);
+        public ProductAttribute DeleteAttribute(ProductAttribute productAttribute);
     }
 }

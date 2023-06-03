@@ -17,6 +17,7 @@ builder.Services.AddDbContext<ProductCatalogueContext>(options => options.UseSql
 
 
 builder.Services.AddScoped<IRepo, Repo>();
+builder.Services.AddScoped<ILogic, Logic>();
 
 var app = builder.Build();
 

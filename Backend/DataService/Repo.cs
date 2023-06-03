@@ -102,10 +102,17 @@ namespace DataService
             }
         }
 
-        public void DeleteProduct(Product product)
+        public Product DeleteProduct(Product product)
         {
             context.Remove(product);
-            context.SaveChanges();
+            if (context.SaveChanges() > 0)
+            {
+                return product;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         // --------------------------- Product attributes
@@ -141,10 +148,17 @@ namespace DataService
             }
         }
 
-        public void DeleteAttribute(ProductAttribute productAttribute)
+        public ProductAttribute DeleteAttribute(ProductAttribute productAttribute)
         {
             context.Remove(productAttribute);
-            context.SaveChanges();
+            if (context.SaveChanges() > 0)
+            {
+                return productAttribute;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

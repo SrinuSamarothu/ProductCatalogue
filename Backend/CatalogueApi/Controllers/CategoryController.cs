@@ -1,5 +1,5 @@
 ﻿using DataService;
-using DataService.Entities;
+using BusinessLogic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,17 +9,17 @@ namespace CatalogueApi.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IRepo repo;
-        public CategoryController(IRepo repo)
+        private readonly ILogic logic;
+        public CategoryController(ILogic _logic)
         {
-            this.repo = repo;
+            logic = _logic;
         }
 
         [HttpGet("GetAll")]
-
+            
         public ActionResult GetAllCategories()
         {
-            var categories = repo.getAllCategories();
+            var categories = logic.getCategories();
             if(categories is null)
             {
                 return NoContent();
@@ -33,7 +33,7 @@ namespace CatalogueApi.Controllers
         [HttpPost("Add")]
         public ActionResult AddCategory(Category category)
         {
-            var cat = repo.AddCategory(category);
+            var cat = logic.AddCategory(category);
             if(cat is null)
             {
                 return BadRequest();
@@ -47,7 +47,7 @@ namespace CatalogueApi.Controllers
         [HttpPut("Update")]
         public ActionResult EditCategory(Category category)
         {
-            var cat = repo.UpdateCategory(category);
+            var cat = logic.UpdateCategory(category);
             if(cat is null)
             {
                 return BadRequest();
@@ -61,8 +61,8 @@ namespace CatalogueApi.Controllers
         [HttpDelete("Delete")]
         public ActionResult DeleteCategory(Category category)
         {
-            var cat = repo.DeleteCategory(category);
-            if(cat is null)
+            var cat = logic.DeleteCategory(category);
+            if (cat is null)
             {
                 return BadRequest();
             }
