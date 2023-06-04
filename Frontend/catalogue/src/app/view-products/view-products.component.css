@@ -1,0 +1,24 @@
+table {
+    position: relative;
+    justify-content: center;
+    width : 90%;
+    margin: auto;
+    top : 5%;
+}
+th, td {
+    border: 8px solid none;
+    padding : 10px;
+    border-spacing: 5px;
+    text-align: center;
+  }
+
+  body {
+    font-family: sans-serif;
+  }
+  .add-record-btn{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+    right : 10%;
+}

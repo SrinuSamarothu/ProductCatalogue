@@ -1,0 +1,30 @@
+<div>
+    <br>
+    <h3 mat-dialog-title style="text-align: center;">Add new category</h3>
+    <br><br>
+    <div mat-dialog-content>
+        
+        <form >
+            <div class="container">
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input type="text" #ip1 matInput formControlName="name" placeholder="" />
+                </mat-form-field>
+              </div>  
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Description</mat-label>
+                  <input type="text" #ip2 matInput formControlName="description" placeholder="" />
+                </mat-form-field>
+              </div>
+            </div>
+        </form>
+      <div mat-dialog-actions class="btns">
+        <button mat-button mat-dialog-close (click)="GoBack()">Cancel</button>
+        <button mat-button mat-dialog-close cdkFocusInitial color="primary" (click)="AddCategory(ip1.value, ip2.value)">Add category</button>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+  

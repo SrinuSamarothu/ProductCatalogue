@@ -1,0 +1,42 @@
+<div>
+    <br>
+    <h3 mat-dialog-title style="text-align: center;">Modify category</h3>
+    <br><br>
+    
+    <mat-card class="class-container" *ngIf="oldCategory != null">
+      <br>
+      <p style="text-align: center; "> Old values : </p>
+      <p style="text-align: center;"> Name  : {{oldCategory.name}}</p>
+      <p style="text-align: center;"> Deescription : {{oldCategory.description}}</p>
+      <br>
+      <br>
+    </mat-card>
+
+    <div mat-dialog-content class="input-container">
+      <h3 mat-dialog-title style="text-align: center;">Enter new values down here</h3>
+      <br>
+        <form>
+            <div class="container">
+              <div class="form-field">
+                <mat-form-field appearance="outline" >
+                  <mat-label>New category name</mat-label>
+                  <input type="text" #ip1 matInput formControlName="name" placeholder="" />
+                </mat-form-field>
+                
+              </div>  
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>New description</mat-label>
+                  <input type="email" #ip2 matInput formControlName="description" placeholder="" />
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+      <div mat-dialog-actions class="btns">
+        <button mat-button mat-dialog-close (click)="GoBack()">Cancel</button>
+        <button mat-button mat-dialog-close cdkFocusInitial color="primary" (click)="ModifyCategory(ip1.value, ip2.value)">Update category</button>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,21 @@
+.input-container{
+    display : flex;
+    flex-direction: column;
+    width : 90%;
+    margin : auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field{
+    width : 100%;
+}
+
+.class-container {
+    display: flex;
+    flex-direction: column;
+    width : 70%;
+    margin : auto;
+    /* justify-content: center; */
+    margin-bottom: 5%;;
+}

@@ -1,0 +1,122 @@
+<br><br><br>
+<h3 mat-dialog-title style="text-align: center;">Attributes of {{proName}}</h3>
+
+<div class="add-record-btn">
+    <button extended mat-button color="accent" (click)="EnableAddAttribute()">
+        Add new attribute
+    </button>
+</div>
+<table class="products-table">
+    <tr class="table-row">
+        <th>
+            Attribute
+        </th>
+        <th>
+            Value
+        </th>
+        <th>
+            Change attribute
+        </th>
+        <th>
+            Remove
+        </th>
+    </tr>
+    <tr *ngFor="let attribute of attributes">
+        <td>
+            {{attribute.name}}
+        </td>
+        <td>
+            {{attribute.value}}
+        </td>
+        <td>
+            <button extended mat-button color="accent" (click)="EnableModifyAttribute(attribute)">
+                Modify
+            </button>
+        </td>
+        <td>
+            <button extended mat-button color="warn" (click)="RemoveAttribute(attribute)">
+                Remove
+            </button>
+        </td>
+    </tr>
+</table>
+
+<div class="add-attribute-container" *ngIf="showAddAttribute">
+    <mat-card class="class-container">
+        <div class="cross-btn">
+            <button id="cross-sign" mat-button mat-dialog-close style="font-size : 30px;" (click)="DisableAddAttribute()">x</button>
+        </div>
+        <br>
+        <h3 mat-dialog-title style="text-align: center;">Add new attribute</h3>
+        <br>
+        <br>
+        <div mat-dialog-content>
+            <form>
+                <div class="container">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Attribute name</mat-label>
+                            <input type="text" #ipName matInput formControlName="name" placeholder="" />
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Value</mat-label>
+                            <input type="text" #ipValue matInput formControlName="value" placeholder="" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+            <div mat-dialog-actions class="btns">
+                <button mat-button mat-dialog-close>Cancel</button>
+                <button mat-button mat-dialog-close cdkFocusInitial color="primary" (click)="AddAttribute(ipName.value, ipValue.value)">Add attribute</button>
+                <br><br><br>
+            </div>
+        </div>
+    </mat-card>
+</div>
+
+
+
+<div class="add-attribute-container" *ngIf="showModifyAttribute">
+    <mat-card class="class-container">
+        <div class="cross-btn">
+            <button id="cross-sign" mat-button mat-dialog-close style="font-size : 30px;" (click)="DisableModifyAttribute()">x</button>
+        </div>
+        <br>
+        <h3 mat-dialog-title style="text-align: center;">Modify '{{oldAttribute.name}}' attribute</h3>
+        <br>
+        <mat-card class="class-container" *ngIf="oldAttribute != null">
+            <br>
+            <p style="text-align: center; "> Old values : </p>
+            <p style="text-align: center;"> Attribute name : {{oldAttribute.name}}</p>
+            <p style="text-align: center;"> Attribute value : {{oldAttribute.value}}</p>
+            <br>
+            <br>
+        </mat-card>
+        <br>
+        <div mat-dialog-content>
+            <form>
+                <div class="container">
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Attribute name</mat-label>
+                            <input type="text" #ipName matInput formControlName="name" placeholder="" />
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Value</mat-label>
+                            <input type="text" #ipValue matInput formControlName="value" placeholder="" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+            <div mat-dialog-actions class="btns">
+                <button mat-button mat-dialog-close>Cancel</button>
+                <button mat-button mat-dialog-close cdkFocusInitial color="primary" (click)="ModifyAttribute(ipName.value, ipValue.value)">Modify attribute</button>
+                <br><br><br>
+            </div>
+        </div>
+    </mat-card>
+</div>

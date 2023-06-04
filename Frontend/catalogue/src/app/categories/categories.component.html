@@ -1,0 +1,37 @@
+<h2 class="heading">Product categories</h2>
+<div class="container">
+  <div class="add-record-btn">
+  <button extended mat-button color="accent" (click)="openAddDialog('20ms', '20ms')">
+    Add new category
+  </button>
+  </div>
+  <br><br>
+  <mat-accordion>
+    <mat-expansion-panel style="margin-bottom: 0.1rem;" hideToggle *ngFor="let cat of categories">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{cat.name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{cat.description}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="expansion-body">
+        <p>{{cat.description}}</p>
+
+        <div class="button-row">
+          <button extended mat-button color="accent" (click)="getProducts(cat.categoryId)">
+            View products
+          </button>
+          <button extended mat-button color="accent" (click)="modifyCategory(cat.categoryId)">
+            Modify category
+          </button>
+          <button extended mat-button color="accent" (click)="removeCategory(cat)">
+            Remove category
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

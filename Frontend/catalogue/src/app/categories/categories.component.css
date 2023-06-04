@@ -1,0 +1,33 @@
+.heading{
+    display : flex;
+    margin : auto;
+    position: relative;
+    top : 10%;
+    font-size: 30px;
+    justify-content: center;
+    align-content: center;
+}
+.container{
+    position : absolute;
+    width : 60%;
+    top : 20%;
+    left : 20%;
+    margin-top : 5%;
+}
+.button-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap : 1 rem;
+}
+.expansion-body{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 6px;
+}
+.add-record-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}

@@ -1,0 +1,41 @@
+.input-container{
+    display : flex;
+    flex-direction: column;
+    width : 90%;
+    margin : auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field{
+    width : 100%;
+}
+
+.class-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width : 100%;
+    margin : auto;
+    /* justify-content: center; */
+    margin-bottom: 5%;;
+}
+.two-parts{
+    position: relative;
+    width : 100%;
+    margin : auto;
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap : 5%;
+}
+.part-one {
+    position : relative;
+    width : 50%;
+    margin : auto;
+}
+.part-two {
+    position : relative;
+    width : 50%;
+    margin : auto;
+}

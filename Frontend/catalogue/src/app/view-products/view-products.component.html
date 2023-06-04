@@ -1,0 +1,74 @@
+<!-- <p>view-products works! {{products | json}}</p> -->
+<br><br><br>
+<h3 mat-dialog-title style="text-align: center;">Products (total {{count}} products)</h3>
+
+<div class="add-record-btn">
+    <button extended mat-button color="accent" (click)="AddProduct()">
+      Add new product
+    </button>
+</div>
+<table class="products-table">
+    <tr class="table-row">
+        <th>
+            Product name
+        </th>
+        <th>
+            Brand
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Additional attributes
+        </th>
+        <th>
+            Modify product
+        </th>
+        <th>
+            Delete
+        </th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>
+            {{product.name}}
+        </td>
+        <td>
+            {{product.brand}}
+        </td>
+        <td>
+            {{product.price}}
+        </td>
+        <td>
+            {{product.quantity}}
+        </td>
+        <td>
+            {{product.description}}
+        </td>
+        <td>
+            <button extended mat-button color="accent" (click)="gotoShowAttributes(product.productId, product.name)">
+                Show attributes
+              </button>
+        </td>
+        <td>
+            <button extended mat-button color="accent" (click)="gotoModifyProduct(product.productId)">
+                Modify 
+              </button>
+        </td>
+        <td>
+            <button extended mat-button color="warn" (click)="RemoveProduct(product)">
+                Remove
+              </button>
+        </td>
+    </tr>
+</table>
+
+
+
+  
+  

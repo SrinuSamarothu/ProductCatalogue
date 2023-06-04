@@ -1,0 +1,48 @@
+<div>
+    <br>
+    <h3 mat-dialog-title style="text-align: center;">Add new product</h3>
+    <br><br>
+    <div mat-dialog-content class="input-container">
+        
+        <form >
+            <div class="container">
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input type="text" #ipName matInput formControlName="name" placeholder="" />
+                </mat-form-field>
+              </div>  
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Brand</mat-label>
+                  <input type="text" #ipBrand matInput formControlName="brand" placeholder="" />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Price</mat-label>
+                  <input type="number" #ipPrice matInput formControlName="price" placeholder="" />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Quantity</mat-label>
+                  <input type="number" #ipQuantity matInput formControlName="quantity" placeholder="" />
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Description</mat-label>
+                  <input type="text" #ipDescription matInput formControlName="description" placeholder="" />
+                </mat-form-field>
+              </div>
+            </div>
+        </form>
+      <div mat-dialog-actions class="btns">
+        <button mat-button mat-dialog-close (click)="GoBack()">Cancel and go back</button>
+        <button mat-button mat-dialog-close cdkFocusInitial color="primary" (click)="AddProduct(ipName.value, ipBrand.value, ipPrice.value, ipQuantity.value, ipDescription.value)">Add product</button>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+  
